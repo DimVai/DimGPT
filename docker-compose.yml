@@ -1,0 +1,19 @@
+# Run docker-compose up -d in the (host) directory of the project
+# APPNICENAME=LocalGPT
+# APPDESCRIPTION=Static website that allows you to use your OpenAI API key for the same experience as you get with ChatGPT!
+# ICONURL=https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1024px-ChatGPT_logo.svg.png
+version: "3"
+services:
+  homer:
+    image: nginx:1.21.3-alpine
+    container_name: local-gpt
+    volumes:
+      - /shares/Programs/EX2Ultra/LocalGPT:/usr/share/nginx/html
+    ports:
+      - 5690:80
+    restart: on-failure
+    healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:80"]
+        interval: 2m
+        timeout: 10s
+        retries: 3
