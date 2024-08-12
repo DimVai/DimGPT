@@ -39,8 +39,8 @@
             gptModel.set({
                 code: "gpt-4o",
                 name: "GPT-4o",
-                inputCost: 0.005,
-                outputCost: 0.015,
+                inputCost: 0.0025,
+                outputCost: 0.010,
                 tokenLimit: 128000,
             });
         break;
@@ -121,10 +121,10 @@
           bind:value={modelNameField}
           class="max-w-[256px] text-black bg-white mb-2 p-2 rounded focus:outline-none focus:bg-white"
         >
-          <option value="gpt-4o-mini">GPT 4o mini | 128k | $0.150 </option>
-          <option value="gpt-4o">GPT 4o | 128k | $5.00 </option>
-          <option value="gpt-4-turbo">GPT 4 Turbo (old) | 128k | $10.00 </option>
-          <option value="gpt-4">GPT 4 (old) | 8k | $30.00 </option>
+          <option value="gpt-4o-mini">GPT 4o mini | 128k | $0.60 </option>
+          <option value="gpt-4o">GPT 4o | 128k | $10.00 </option>
+          <option value="gpt-4-turbo">GPT 4 Turbo (old) | 128k | $30.00 </option>
+          <option value="gpt-4">GPT 4 (old) | 8k | $60.00 </option>
         </select>
       </div>
       {#if modelNameField == "gpt-4" || modelNameField == "gpt-4-turbo" || modelNameField == "gpt-4o"}
